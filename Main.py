@@ -11,14 +11,3 @@ def ibwt(bwt_str: str, original_index: int) -> str:
     for _ in range(len(bwt_str)):
         table = sorted([bwt_str[i] + table[i] for i in range(len(bwt_str))])
     return table[original_index]
-
-
-stringa = input("Inserisci una stringa: ") + "$"
-
-risultato_bwt, indice = bwt(stringa)
-stringa_ricostruita = ibwt(risultato_bwt, indice)
-
-print(f"Stringa originale:    {stringa}")
-print(f"Risultato BWT:        {risultato_bwt}")
-print(f"Indice riga:          {indice}")
-print(f"Stringa ricostruita:  {stringa_ricostruita}")
